@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Demo</title>
+<link rel="stylesheet" href="jsRapStar.css" />
+<link rel="stylesheet" href="index.css" />
+<script src="jquery.min.js"></script>
+<script src="jsRapStar.js"></script>
+<script>
+$(document).ready(function(){
+$('#demo1').jsRapStar();
+$('#demo2').jsRapStar({enabled:false});
+$('#demo3').jsRapStar({colorFront:'#0ff',colorBack:'yellow'});
+$('#demo4').jsRapStar({star:'&#x2665',colorFront:'red',starHeight:64});
+$('#demo5').jsRapStar({colorFront:'#0f0',length:10,starHeight:64,step:false,
+onClick:function(score){
+	$(this)[0].StarF.css({color:'red'});
+	alert(score);
+},
+onMousemove:function(score){
+	$(this).attr('title','Ocena '+score);
+}
+});
+});
+</script>
+</head>
+<body>
+<div id="divMain">
+<div id="divGitHub">
+<div id="GitHub" onclick="location.href='https://github.com/Thibor/jsRapStar'"></div>
+</div>
+<div>Standard</div>
+<div id="demo1" start="3"></div>
+<!-- <div>Disabled</div>
+<div id="demo2" start="4"></div>
+<div>Colors</div>
+<div id="demo3" start="2"></div>
+<div>Symbol</div>
+<div id="demo4" start="5"></div>
+<div>Action</div>
+<div id="demo5" start="6"></div> -->
+</div>
+</body>
+</html>
